@@ -28,7 +28,7 @@ movies_watched_df.shape  # The number of people who watched at least 1 same movi
 user_movie_count =(movies_watched_df.T.notnull().sum()).reset_index()
 user_movie_count.columns = ["userId", "movie_count"]
 perc = len(movies_watched) * 50/100
-users_same_movies = user_movie_count[user_movie_count["movie_count"] > perc]["userId"]   # id of users who have at least ½50 joint views with random user
+users_same_movies = user_movie_count[user_movie_count["movie_count"] > perc]["userId"]   # id of users who have at least %50 joint views with random user
 
 
 ### Most similar to the user to be suggested identify users ###
@@ -41,7 +41,7 @@ corr_df = pd.DataFrame(corr_df, columns=["corr"])
 corr_df.index.names = ['user_id_1', 'user_id_2']
 corr_df = corr_df.reset_index()
 
-## Bringing users with a correlation of ½65 and above with random user ##
+## Bringing users with a correlation of %65 and above with random user ##
 top_users = corr_df[(corr_df["user_id_1"] == random_user) & (corr_df["corr"] >= 0.65)][
     ["user_id_2", "corr"]].reset_index(drop=True).sort_values(by="corr", ascending = False)
 top_users.rename(columns={"user_id_2": "userId"}, inplace=True)
