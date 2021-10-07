@@ -3,8 +3,8 @@ pd.set_option('display.max_columns', 20)
 
 ### Data Preparation ###
 def create_user_movie_df():
-    movie = pd.read_csv(r"C:\Users\Oguz\Desktop\DCMLBC06\HAFTA04\dataset\movie_lens_dataset\movie.csv")
-    rating = pd.read_csv (r"C:\Users\Oguz\Desktop\DCMLBC06\HAFTA04\dataset\movie_lens_dataset\rating.csv")
+    movie = pd.read_csv("movie.csv")
+    rating = pd.read_csv ("rating.csv")
     df = movie.merge(rating, how ="left", on="movieId")
     comment_counts = pd.DataFrame(df["title"].value_counts())         
     common_movies = df[~df["title"].isin(comment_counts[comment_counts["title"] <= 1000].index)]               
