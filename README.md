@@ -12,10 +12,11 @@ Users are randomly selected. It is known that all selected users voted for at le
 
 ## Variables
 movie.csv
-- movieId – Unique movie number (UniqueID)
-- title – Movie name
+-movieId: Unique movie number (UniqueID)
+-title: Movie name
+
 rating.csv
-- userid – Unique user number (UniqueID)
-- movieId – Unique movie number (UniqueID)
-- rating – The rating given to the movie by the user
-- timestamp – Evaluation date
+-userid: Unique user number (UniqueID)
+-movieId: Unique movie number (UniqueID)
+-rating: The rating given to the movie by the user
+-timestamp: Evaluation date
