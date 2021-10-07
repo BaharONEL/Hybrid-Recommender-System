@@ -6,8 +6,8 @@ def create_user_movie_df():
     movie = pd.read_csv(r"C:\Users\Oguz\Desktop\DCMLBC06\HAFTA04\dataset\movie_lens_dataset\movie.csv")
     rating = pd.read_csv (r"C:\Users\Oguz\Desktop\DCMLBC06\HAFTA04\dataset\movie_lens_dataset\rating.csv")
     df = movie.merge(rating, how ="left", on="movieId")
-    comment_counts = pd.DataFrame(df["title"].value_counts())          # filmler ve yapılan yorumları df e atadım
-    common_movies = df[~df["title"].isin(comment_counts[comment_counts["title"] <= 1000].index)]                 # 1000 den fazla yoruma sahip olan filmleri common_movies df e atadım
+    comment_counts = pd.DataFrame(df["title"].value_counts())         
+    common_movies = df[~df["title"].isin(comment_counts[comment_counts["title"] <= 1000].index)]               
     user_movie_df = common_movies.pivot_table(index=["userId"], columns=["title"], values="rating")
     return user_movie_df
 
