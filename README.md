@@ -1,4 +1,6 @@
 # Hybrid-Recommender-System
+![image](https://user-images.githubusercontent.com/90307489/136345898-2e46e4eb-faaf-4277-bdf1-b3fda84c18ce.png)
+
 ## Business Problem
 For the user whose ID is given, estimation will be made using the item-based and user-based recommender methods.
 
